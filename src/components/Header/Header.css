@@ -1,0 +1,16 @@
+/* components/Header/Header.css */
+.header {
+  background-color: #EDEDED;
+  text-align: center;
+  position: relative;
+  padding: 80px 20px; /* Ajuste o padding para manter consistência */
+  margin: 0 auto; /* Centraliza o header */
+  max-width: 1200px; /* Garante a mesma largura que os outros containers */
+}
+
+.header-cover h1 {
+  color: #27538C;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+  font-size: 52px;
+}

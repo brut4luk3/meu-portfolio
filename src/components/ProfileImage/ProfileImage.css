@@ -1,0 +1,18 @@
+/* components/ProfileImage/ProfileImage.css */
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #F2F2F2;
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  z-index: 10;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

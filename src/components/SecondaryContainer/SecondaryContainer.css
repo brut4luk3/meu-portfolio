@@ -1,0 +1,16 @@
+.secondary-container {
+    background-color: #EDEDED;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .stacks {
+    text-align: center;
+  }
+  
+  .stacks h1 {
+    font-size: 52px;
+    color: #27538C;
+  }  

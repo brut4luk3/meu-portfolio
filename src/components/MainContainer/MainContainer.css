@@ -1,0 +1,42 @@
+/* MainContainer.css */
+.main-container {
+  background-color: #EDEDED;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bio-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajustando imagens à esquerda */
+.bio-section#par1 .bio-img,
+.bio-section#par3 .bio-img {
+  margin-right: 5px; /* Reduz a margem para o lado direito */
+}
+
+/* Ajustando imagem à direita */
+.bio-section#par2 .bio-img {
+  margin-left: 5px; /* Reduz a margem para o lado esquerdo */
+}
+
+/* Aproximando os parágrafos das imagens */
+.bio-section#par1 p,
+.bio-section#par3 p {
+  margin-left: -30px; /* Aplica margem negativa para esquerda */
+}
+
+.bio-section#par2 p {
+  margin-right: -50px; /* Aplica margem negativa para direita */
+}
+
+.bio-img {
+  width: 200px;
+  height: auto;
+}
+
+.bio-section p {
+  font-size: 22px;
+}

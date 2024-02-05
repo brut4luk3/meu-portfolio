@@ -10,6 +10,7 @@ const Header: React.FC = () => {
         <h1>OLÁ MUNDO!</h1>
       </div>
       <div className='header3Image'></div>
+      <div className='header4Image'></div>
       <ProfileImage />
     </div>
   );

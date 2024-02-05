@@ -1,6 +1,6 @@
 import React from 'react';
 import './SecondaryContainer.css';
-import WordCloudComponent from '../WordCloud';
+import WordCloudComponent from '../anims/WordCloud';
 
 const SecondaryContainer = () => {
   return (

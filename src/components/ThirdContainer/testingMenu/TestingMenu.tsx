@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './TestingMenu.css';
 import ComparacaoDatasForm from './ComparacaoDatasForm';
+import ReplaceTextForm from './ReplaceTextForm';
 
 const menuItems = [
     "Comparação de Datas",
@@ -29,7 +30,8 @@ const menuItems = [
             </div>
             {isOpen[index] && (
               <div className="dropdown-content">
-                {index === 0 ? <ComparacaoDatasForm /> : "Teste"}
+                {index === 0 ? <ComparacaoDatasForm /> : ""}
+                {index === 1 ? <ReplaceTextForm /> : ""}
               </div>
             )}
           </React.Fragment>

@@ -99,7 +99,7 @@ const ComparacaoDatasForm = () => {
                 <select
                     value={modo}
                     onChange={(e) => setModo(e.target.value)}
-                    className="input-data modo-dropdown" // Adicione 'modo-dropdown' aqui
+                    className="input-data modo-dropdown"
                 >
                     <option value="diferenca">Diferença</option>
                     <option value="comparacao">Comparação</option>

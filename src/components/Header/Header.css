@@ -3,15 +3,35 @@
   background-color: #EDEDED;
   text-align: center;
   position: relative;
-  padding: 80px; /* Ajuste o padding para manter consistência */
-  margin: 0 auto; /* Centraliza o header */
-  max-width: 1200px; /* Garante a mesma largura que os outros containers */
+  height: 80px;
+  padding: 80px;
+  margin: 0 auto;
+  max-width: 1200px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-cover {
+  position: relative;
+  z-index: 2;
 }
 
 .header-cover h1 {
   color: #27538C;
   font-family: 'Roboto Condensed', sans-serif;
-  margin: 0;
   font-size: 52px;
+}
+
+.header3Image {
+  position: absolute;
+  left: 20px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background: url('../../assets/header3.png') no-repeat right top;
+  background-size: contain;
+  z-index: 1;
 }

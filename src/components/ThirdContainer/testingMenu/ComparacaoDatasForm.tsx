@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ComparacaoDatasForm.css';
+import './GeneralFormStyle.css';
 import TestingMenuAnim from '../../anims/TestingMenuAnim';
 
 const ComparacaoDatasForm = () => {
@@ -94,17 +94,17 @@ const ComparacaoDatasForm = () => {
                     value={data2}
                     onChange={(e) => setData2(e.target.value)}
                     placeholder="Data 2"
-                    className="input-data input-data-bottom"
+                    className="input-data"
                 />
                 <select
                     value={modo}
                     onChange={(e) => setModo(e.target.value)}
-                    className="input-data modo-dropdown"
+                    className="input-data input-data-bottom"
                 >
                     <option value="diferenca">Diferença</option>
                     <option value="comparacao">Comparação</option>
                 </select>
-
+                <br></br>
                 <button type="submit" className="submit-btn">Enviar</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}

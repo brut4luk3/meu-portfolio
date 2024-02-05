@@ -3,8 +3,6 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 20px;
     font-size: 22px;
   }
@@ -14,6 +12,20 @@
     border-bottom: 1px solid #acacac;
     cursor: pointer;
   }
+
+  .menu-item:hover {
+    background-color: #ffebeb;
+  }
+
+  .testing-menu .menu-item:first-child:hover {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .testing-menu .menu-item:last-child:hover {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }  
   
   .dropdown-content {
     padding: 20px;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ReplaceTextForm.css';
+import './GeneralFormStyle.css';
 import TestingMenuAnim from '../../anims/TestingMenuAnim';
 
 const ReplaceTextForm = () => {
@@ -74,17 +74,17 @@ const ReplaceTextForm = () => {
                     value={casoParcialQuantidade}
                     onChange={(e) => setCasoParcialQuantidade(e.target.value)}
                     placeholder="Caso Parcial Quantidade"
-                    className="input-data input-data-bottom"
+                    className="input-data"
                 />
-                <br></br>
                 <select
                     value={modo}
                     onChange={(e) => setModo(e.target.value)}
-                    className="input-data modo-dropdown"
+                    className="input-data input-data-bottom"
                 >
                     <option value="parcial">Parcial</option>
                     <option value="completo">Completo</option>
                 </select>
+                <br></br>
                 <button type="submit" className="submit-btn">Enviar</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}

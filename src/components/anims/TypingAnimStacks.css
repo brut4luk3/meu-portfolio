@@ -1,0 +1,38 @@
+.secondary-container {
+    position: relative;
+    background-color: #EDEDED;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .typewriter-container {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    margin: 0 auto;
+    gap: -20px;
+    width: 500px;
+    margin-bottom: 20px;
+  }
+  
+  .stack {
+    color: #ffffff;
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+  }
+  
+  .cursor {
+    animation: blink 1s infinite;
+    border-right: 2px solid orange;
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }  

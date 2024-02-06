@@ -1,0 +1,13 @@
+/* FloatingChat.css */
+.floating-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Certifique-se de que está acima de outros elementos */
+  }
+  
+  /* Adicione estilos para o dialog se estiver usando uma biblioteca que permita */
+  .dialog-content h1 {
+    color: #27538C; /* Cor do h1 como nos outros lugares do site */
+  }

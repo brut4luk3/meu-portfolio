@@ -1,16 +1,50 @@
 .secondary-container {
-    background-color: #EDEDED;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .stacks {
-    text-align: center;
-  }
-  
-  .stacks h1 {
-    font-size: 52px;
-    color: #27538C;
-  }  
+  position: relative;
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.stacks {
+  text-align: center;
+}
+
+.stacks h1 {
+  font-size: 52px;
+  color: #27538C;
+}
+
+.cloud1 {
+  position: absolute;
+  left: 700px;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 11%;
+  background: url('../../assets/cloud1.png') no-repeat left top;
+  background-size: contain;
+}
+
+.cloud2 {
+  position: absolute;
+  left: 100px;
+  right: 0;
+  bottom: 0;
+  top: -30px;
+  width: 17%;
+  background: url('../../assets/cloud2.png') no-repeat left top;
+  background-size: contain;
+}
+
+.cloud3 {
+  position: absolute;
+  left: 1000px;
+  right: 0;
+  bottom: 0;
+  top: 30px;
+  width: 10%;
+  background: url('../../assets/cloud3.png') no-repeat left top;
+  background-size: contain;
+}

@@ -13,16 +13,41 @@
   align-items: center;
 }
 
+.emphasis {
+  color: #27538C;
+}
+
 .header-cover {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
   position: relative;
   z-index: 2;
+}
+
+.header-cover .typewriter {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 35%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
 }
 
 .header-cover h1 {
   color: #27538C;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 52px;
-  margin-left: 170px;
   height: 20px;
 }
 

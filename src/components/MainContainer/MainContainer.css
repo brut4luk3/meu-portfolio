@@ -3,6 +3,8 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
+  overflow: hidden;
 }
 
 .bio-section {

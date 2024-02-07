@@ -1,0 +1,143 @@
+.floating-contact {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.floating-contact img {
+    width: 100px;
+    height: auto;
+}
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-overlay h3,
+h4 {
+    color: #27538C;
+}
+
+.dialog {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.contact-links h3,
+h4 {
+    color: #27538C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.contact-links p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+}
+
+.contact-links a {
+    text-decoration: none;
+
+}
+
+.contact-links a:hover {
+    color: #3671BF;
+}
+
+.contact-links img {
+    cursor: pointer;
+    width: 24px;
+    padding-left: 20px;
+    height: auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.input-data,
+.input-data-top,
+.input-data-bottom {
+    box-sizing: border-box;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+.input-data-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.input-data-bottom {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.lone-field {
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.input-data:not(.submit-btn) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn {
+    color: #27538C;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+}
+
+.submit-btn:hover {
+    background-color: #F2F2F2;
+}
+
+.contact-form .error {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.contact-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

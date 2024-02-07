@@ -1,13 +1,46 @@
-/* FloatingChat.css */
 .floating-chat {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1000; /* Certifique-se de que está acima de outros elementos */
-  }
-  
-  /* Adicione estilos para o dialog se estiver usando uma biblioteca que permita */
-  .dialog-content h1 {
-    color: #27538C; /* Cor do h1 como nos outros lugares do site */
-  }
+  position: fixed;
+  right: 20px;
+  bottom: 0px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.floating-chat img {
+  width: 200px;
+  height: auto;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 250px;
+  background-color: white;
+  color: #27538C;
+  text-align: center;
+  border-radius: 25px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1001;
+  bottom: 90%;
+  left: 50%;
+  margin-left: -225px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: 60px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.floating-chat:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}

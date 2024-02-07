@@ -1,11 +1,11 @@
 body {
   margin: 0;
-  padding: 20px;
   font-family: 'Roboto', sans-serif;
   background-color: #F2F2F2;
 }
 
-.content, .App {
+.content,
+.App {
   padding: auto;
   margin: 0 auto;
   max-width: 1200px;

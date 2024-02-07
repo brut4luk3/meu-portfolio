@@ -10,6 +10,17 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
+    <footer className='footer'>
+      <div>
+        <div>
+          <div>
+            <p>Endereço: Rua Alwin Beckmann, 127, Blumenau, Brasil</p>
+            <p>Contato: lucasreinert96@gmail.com | Telefone: +55 (47) 99975-1383</p>
+            <p>&copy; 2024 Portfolio. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </React.StrictMode>
 );
 

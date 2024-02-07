@@ -3,8 +3,8 @@
   background-color: #EDEDED;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  overflow: hidden;
 }
 
 .stacks {
@@ -47,4 +47,15 @@
   width: 10%;
   background: url('../../assets/cloud3.png') no-repeat left top;
   background-size: contain;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: both;
 }

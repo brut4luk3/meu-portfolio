@@ -1,6 +1,6 @@
 .floating-chat {
   position: fixed;
-  right: 20px;
+  right: -5px;
   bottom: 0px;
   cursor: pointer;
   z-index: 1000;

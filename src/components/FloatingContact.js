@@ -69,6 +69,9 @@ const FloatingContact = () => {
             <Draggable>
                 <div className="floating-contact" onClick={() => setShowDialog(true)}>
                     <img src={contactIcon} alt="Contact" />
+                    <div className='tooltip-contact'>
+                        <h4>Você pode me mover!</h4>
+                    </div>
                 </div>
             </Draggable>
 

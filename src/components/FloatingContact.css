@@ -6,8 +6,41 @@
     z-index: 1000;
 }
 
+.tooltip-contact {
+    visibility: hidden;
+    width: 130px;
+    background-color: white;
+    color: #27538C;
+    text-align: center;
+    border-radius: 25px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1001;
+    bottom: 120%;
+    right: -100%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+
+.tooltip-contact::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -20%;
+    margin-left: 50px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.floating-contact:hover .tooltip-contact {
+    visibility: visible;
+    opacity: 1;
+}
+
 .floating-contact img {
-    width: 100px;
+    width: 70px;
     height: auto;
 }
 
@@ -40,13 +73,15 @@ h4 {
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    text-align: center;
 }
 
 .contact-links {
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    text-align: center;
 }
 
 .contact-links h3,

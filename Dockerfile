@@ -14,5 +14,4 @@ COPY package*.json ./
 COPY server.js ./
 RUN npm install express
 
-# Iniciar o servidor Express
 CMD ["node", "server.js"]

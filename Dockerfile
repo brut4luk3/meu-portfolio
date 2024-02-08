@@ -1,4 +1,4 @@
-# Especificar a imagem base. Aqui, usamos a versão oficial do Node.js como base.
+# Especificar a imagem base para a etapa de build
 FROM node:alpine as build-stage
 
 # Definir o diretório de trabalho dentro do contêiner
@@ -22,6 +22,10 @@ FROM nginx:alpine as production-stage
 
 # Copiar o conteúdo construído da etapa de build para o diretório de servir do Nginx
 COPY --from=build-stage /app/build /usr/share/nginx/html
+
+# Substituir o arquivo de configuração padrão do Nginx pelo seu arquivo personalizado
+# Ajuste o caminho do arquivo conforme onde você colocou o nginx.conf no seu projeto
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expor a porta 80 para o contêiner poder aceitar conexões HTTP
 EXPOSE 80

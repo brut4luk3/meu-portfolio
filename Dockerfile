@@ -28,7 +28,8 @@ COPY --from=build-stage /app/build /usr/share/nginx/html
 COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expor a porta 80 para o contêiner poder aceitar conexões HTTP
-EXPOSE 8080
+EXPOSE 8080 443
+
 
 # Iniciar o Nginx quando o contêiner for iniciado
 CMD ["nginx", "-g", "daemon off;"]

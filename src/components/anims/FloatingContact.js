@@ -71,7 +71,7 @@ const FloatingContact = () => {
     return (
         <>
             <Draggable>
-            <div className="floating-contact" onClick={handleContactClick} onTouchEnd={handleContactClick}>
+            <div className="floating-contact" onClick={() => handleContactClick()} onTouchEnd={() =>handleContactClick()}>
                     <img src={contactIcon} alt="Contact" />
                     <div className='tooltip-contact'>
                         <span><h4>Você pode me mover!</h4></span>

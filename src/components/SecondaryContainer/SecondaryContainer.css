@@ -12,7 +12,7 @@
 }
 
 .stacks h1 {
-  font-size: 52px;
+  font-size: 50px;
   color: #27538C;
 }
 
@@ -58,4 +58,23 @@
   animation-name: fadeIn;
   animation-duration: 2s;
   animation-fill-mode: both;
+}
+
+@media (max-width: 768px) {
+  .stacks h1 {
+    font-size: 35px;
+  }
+  
+  .cloud1 {
+    left: 300px;
+  }
+  
+  .cloud2 {
+    left: 50px;
+    top: -10px;
+  }
+  
+  .cloud3 {
+    left: 350px;
+  }
 }

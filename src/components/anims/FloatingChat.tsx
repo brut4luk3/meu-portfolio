@@ -1,5 +1,5 @@
 import React from 'react';
-import chatIcon from '../assets/3d.png';
+import chatIcon from '../../assets/3d.png';
 import './FloatingChat.css';
 
 const FloatingChat = () => {

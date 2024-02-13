@@ -44,3 +44,21 @@
   visibility: visible;
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .floating-chat img {
+    width: 110px;
+  }
+  
+  .tooltip {
+    width: 150px;
+    padding: 10px;
+    bottom: 95%;
+    left: 135%;
+    font-size: 12px;
+  }
+
+  .tooltip::after {
+    margin-left: 20px;
+  }
+}

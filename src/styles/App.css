@@ -1,7 +1,6 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #F2F2F2;
   overflow-x: hidden;
 }
 
@@ -19,63 +18,5 @@ html {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-}
-
-/* Responsividade para tablets */
-@media (max-width: 768px) {
-  /* Ajustes para telas até 768px */
-}
-
-/* Responsividade para smartphones */
-@media (max-width: 480px) {
-
-  /* Ajustes para telas até 480px */
-  .container,
-  .header,
-  .main-container,
-  .secondary-container,
-  .third-container,
-  .floating-chat {
-    padding: 10px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header,
-  .main-container,
-  .secondary-container,
-  .third-container {
-    margin: 0 auto;
-    width: 100%;
-    /* Ajusta a largura para ocupar 100% da tela */
-  }
-
-  .header img,
-  .main-container img,
-  .secondary-container img,
-  .third-container img {
-    width: 100%;
-    /* Faz com que as imagens se ajustem à largura do contêiner */
-    height: auto;
-    /* Mantém a proporção das imagens */
-  }
-
-  /* Ajustes para o layout dos formulários e botões */
-  .form-container,
-  .input-data,
-  .submit-btn {
-    width: 90%;
-    /* Aumenta a largura dos campos de formulário e botões */
-  }
-
-  /* Ajustes para o texto, garantindo que seja legível em dispositivos móveis */
-  h1,
-  h2,
-  h3,
-  p {
-    font-size: smaller;
-    /* Reduz o tamanho da fonte */
-  }
-
-  /* Ajustes adicionais conforme necessário */
+  background-image: linear-gradient(to top right, #F2F2F2 50%, #27538C 50%);
 }

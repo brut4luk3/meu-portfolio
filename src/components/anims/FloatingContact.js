@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import contactIcon from '../assets/contact.png';
-import copyIcon from '../assets/copy.png';
+import contactIcon from '../../assets/contact.png';
+import copyIcon from '../../assets/copy.png';
 import './FloatingContact.css';
-import '../components/ThirdContainer/testingMenu/GeneralFormStyle.css'
-import TestingMenuAnim from '../components/anims/TestingMenuAnim';
+import '../ThirdContainer/testingMenu/GeneralFormStyle.css'
+import TestingMenuAnim from './TestingMenuAnim';
 import Draggable from 'react-draggable';
 
 const FloatingContact = () => {
@@ -67,10 +67,10 @@ const FloatingContact = () => {
     return (
         <>
             <Draggable>
-                <div className="floating-contact" onClick={() => setShowDialog(true)}>
+            <div className="floating-contact" onClick={() => setShowDialog(true)} onTouchEnd={() => setShowDialog(true)}>
                     <img src={contactIcon} alt="Contact" />
                     <div className='tooltip-contact'>
-                        <h4>Você pode me mover!</h4>
+                        <span><h4>Você pode me mover!</h4></span>
                     </div>
                 </div>
             </Draggable>

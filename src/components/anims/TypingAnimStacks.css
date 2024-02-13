@@ -16,8 +16,8 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     margin: 0 auto;
     gap: -20px;
-    width: 500px;
-    height: 220px;
+    width: 550px;
+    height: 250px;
     margin-bottom: 20px;
   }
   
@@ -34,4 +34,12 @@
   
   @keyframes blink {
     50% { border-color: transparent; }
-  }  
+  }
+
+  @media (max-width: 768px) {
+    .typewriter-container {
+      gap: -50px;
+      width: 400px;
+      height: 250px;
+    }
+  }

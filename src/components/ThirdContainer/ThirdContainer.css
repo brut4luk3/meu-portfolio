@@ -15,20 +15,9 @@
   font-size: 30px;
 }
 
-.header1Image {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 60%;
-  background: url('../../assets/header1.png') no-repeat left top;
-  background-size: contain;
-}
-
 .header5Image {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   width: 50%;
   height: 100%;
@@ -50,4 +39,15 @@
   animation-name: fadeIn;
   animation-duration: 2s;
   animation-fill-mode: both;
+}
+
+@media (max-width: 768px) {
+  .third-container h1 {
+    font-size: 25px;
+  }
+  
+  .header5Image {
+    width: 80%;
+    height: 100%;
+  }
 }

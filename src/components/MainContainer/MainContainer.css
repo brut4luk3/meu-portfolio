@@ -38,3 +38,14 @@
 .bio-section p {
   font-size: 22px;
 }
+
+@media (max-width: 768px) {
+  .bio-img {
+    width: 130px;
+    height: auto;
+  }
+  
+  .bio-section p {
+    font-size: 14px;
+  }
+}

@@ -3,8 +3,8 @@ import Header from './components/Header/Header';
 import MainContainer from './components/MainContainer/MainContainer';
 import SecondaryContainer from './components/SecondaryContainer/SecondaryContainer';
 import ThirdContainer from './components/ThirdContainer/ThirdContainer';
-import FloatingChat from './components/FloatingChat';
-import FloatingContact from './components/FloatingContact';
+import FloatingChat from './components/anims/FloatingChat';
+import FloatingContact from './components/anims/FloatingContact';
 
 function App() {
   return (

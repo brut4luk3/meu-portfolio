@@ -29,7 +29,6 @@ const ThirdContainer = () => {
       className={`third-container ${hasAnimated ? 'fadeIn' : ''}`}
       ref={containerRef}
     >
-      <div className='header1Image'></div>
       <div className='header5Image'></div>
       <h1>Teste alguns dos meus produtos:</h1>
       <TestingMenu />

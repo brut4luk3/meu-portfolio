@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './TypingAnimStacks.css';
 
 const stacksList = [
-  'Flutter', 'Django', 'Bootstrap', 'Flask API', 'Java',
-  'JavaScript', 'Typescript', 'React.js', 'Docker', 'AWS',
+  'Flutter', 'Django', 'Bootstrap', 'Flask API', 'Java', 'JavaScript', 'Typescript', 'React.js', 'Vue.js', 'Angular.js', 'Docker', 'AWS',
   'Automated Tests', 'Selenium', 'SQL', 'Tesseract OCR', 'Git', 'Github',
 ];
 

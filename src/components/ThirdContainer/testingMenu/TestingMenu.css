@@ -41,11 +41,7 @@
 
 @media (max-width: 768px) {
   .testing-menu {
-<<<<<<< HEAD
     width: 420px;
-=======
-    width: 440px;
->>>>>>> 976f3755715f1e8eed45d13f68e07829d3cd1822
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 20px;

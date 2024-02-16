@@ -1,0 +1,15 @@
+.LanguageSelector {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    z-index: 8000;
+}
+
+.LanguageSelector img {
+    cursor: pointer;
+    width: 40px;
+    padding: 5px;
+}

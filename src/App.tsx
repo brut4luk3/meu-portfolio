@@ -7,10 +7,12 @@ import SecondaryContainer from './components/SecondaryContainer/SecondaryContain
 import ThirdContainer from './components/ThirdContainer/ThirdContainer';
 import FloatingChat from './components/anims/FloatingChat';
 import FloatingContact from './components/anims/FloatingContact';
+import LanguageSelector from './components/anims/LanguageSelector';
 
 function App() {
   return (
     <div className="App">
+      <LanguageSelector />
       <Header />
       <div className="content">
         <MainContainer />

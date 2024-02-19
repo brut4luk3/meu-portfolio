@@ -18,15 +18,15 @@ class LanguageSelector extends React.Component<Props, State> {
     translateContent = async (language: string) => {
         if (language === 'en') {
             this.setState({ isLoading: true });
-            const htmlContent = document.documentElement.innerHTML;
-            console.log("Sending request to API with HTML content.");
+            const siteUrl = window.location.href; // Captura a URL atual da página
+            console.log("Sending request to API with site URL.");
             try {
-                const response = await fetch('https://translaterum-production.up.railway.app/api/translate', {
+                const response = await fetch('https://translaterum-production.up.railway.app/api/translate-site', { // Certifique-se de que o endpoint está correto
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ html: htmlContent }),
+                    body: JSON.stringify({ url: siteUrl }), // Envia a URL como parte do corpo da solicitação
                 });
                 if (!response.ok) {
                     console.error('Response not OK:', response.status);
@@ -34,7 +34,7 @@ class LanguageSelector extends React.Component<Props, State> {
                 }
                 const data = await response.json();
                 console.log("Response received:", data);
-                document.documentElement.innerHTML = data.translated_html;
+                // Considerações sobre a atualização do DOM são discutidas abaixo
             } catch (error) {
                 console.error('Erro ao traduzir:', error);
             }

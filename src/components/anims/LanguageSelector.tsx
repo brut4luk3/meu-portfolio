@@ -1,61 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TestingMenuAnim from './TestingMenuAnim';
 import brIcon from '../../assets/br.png';
 import usIcon from '../../assets/us.png';
-import './LanguageSelector.css'
+import './LanguageSelector.css';
 
-interface Props { }
+const LanguageSelector = () => {
+    const [isLoading, setIsLoading] = useState(false);
 
-interface State {
-    isLoading: boolean;
-}
+    const translateContent = async () => {
+        setIsLoading(true);
+        const siteUrl = window.location.href;
 
-class LanguageSelector extends React.Component<Props, State> {
-    state: State = {
-        isLoading: false,
-    };
+        try {
+            const response = await fetch('https://translaterum-production.up.railway.app/api/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ url: siteUrl }),
+            });
 
-    translateContent = async (language: string) => {
-        if (language === 'en') {
-            this.setState({ isLoading: true });
-            const htmlContent = document.documentElement.innerHTML;
-            console.log("Sending request to API with HTML content.");
-            try {
-                const response = await fetch('https://translaterum-production.up.railway.app/api/translate', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ html: htmlContent }),
-                });
-                if (!response.ok) {
-                    console.error('Response not OK:', response.status);
-                    throw new Error('Falha na tradução!');
-                }
-                const data = await response.json();
-                console.log("Response received:", data);
-                document.documentElement.innerHTML = data.translated_html;
-            } catch (error) {
-                console.error('Erro ao traduzir:', error);
-            }
-            this.setState({ isLoading: false });
-        } else {
-            window.location.reload();
+            if (!response.ok) throw new Error('Falha na tradução');
+            const translations = await response.json();
+
+            Object.keys(translations).forEach(originalText => {
+                document.body.innerHTML = document.body.innerHTML.replace(new RegExp(originalText, 'g'), translations[originalText]);
+            });
+
+        } catch (error) {
+            console.error('Erro ao traduzir:', error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
-    render() {
-        const { isLoading } = this.state;
-        return (
-            <>
-                {isLoading && <TestingMenuAnim />}
-                <div className='LanguageSelector'>
-                    <img src={usIcon} alt="Translate to English" onClick={() => this.translateContent('en')} />
-                    <img src={brIcon} alt="Translate to Portuguese" onClick={() => this.translateContent('br')} />
-                </div>
-            </>
-        );
-    }
-}
+    return (
+        <div className='LanguageSelector'>
+            {isLoading && <TestingMenuAnim />}
+            <img src={usIcon} alt="Translate to English" onClick={translateContent} />
+            <img src={brIcon} alt="Translate to Portuguese" onClick={() => window.location.reload()} />
+        </div>
+    );
+};
 
 export default LanguageSelector;

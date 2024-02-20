@@ -4,12 +4,6 @@ import brIcon from '../../assets/br.png';
 import usIcon from '../../assets/us.png';
 import './LanguageSelector.css';
 
-interface Translation {
-  original: string;
-  translated: string;
-  text_id: string;
-}
-
 const LanguageSelector: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,12 +21,14 @@ const LanguageSelector: React.FC = () => {
       });
 
       if (!response.ok) throw new Error('Falha na tradução');
-      const translations: Record<string, Translation> = await response.json();
+      const translations: Record<string, string> = await response.json();
 
-      // Aplica as traduções
-      Object.values(translations).forEach((translation) => {
-        document.querySelectorAll(`[data-translate-id="${translation.text_id}"]`).forEach(element => {
-          element.textContent = translation.translated;
+      Object.entries(translations).forEach(([original, translated]) => {
+        // Encontra todos os elementos que contêm o texto original e atualiza para o texto traduzido
+        document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, a, label').forEach(element => {
+          if (element.textContent === original) {
+            element.textContent = translated;
+          }
         });
       });
 

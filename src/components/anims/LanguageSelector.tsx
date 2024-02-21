@@ -16,7 +16,7 @@ const LanguageSelector: React.FC = () => {
     const htmlContent = document.documentElement.outerHTML;
 
     try {
-      const response = await fetch('http://localhost:5000/api/translate', {
+      const response = await fetch('https://translaterum-production.up.railway.app/api/translate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

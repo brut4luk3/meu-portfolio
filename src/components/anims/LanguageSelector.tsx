@@ -4,32 +4,33 @@ import brIcon from '../../assets/br.png';
 import usIcon from '../../assets/us.png';
 import './LanguageSelector.css';
 
+interface Translations {
+  [key: string]: string;
+}
+
 const LanguageSelector: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const translateContent = async () => {
     setIsLoading(true);
-    const siteUrl = window.location.href;
+    const htmlContent = document.documentElement.outerHTML;
 
     try {
-      const response = await fetch('https://translaterum-production.up.railway.app/api/translate', {
+      const response = await fetch('http://localhost:5000/api/translate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url: siteUrl }),
+        body: JSON.stringify({ html: htmlContent }),
       });
 
       if (!response.ok) throw new Error('Falha na tradução');
-      const translations: Record<string, string> = await response.json();
+      const translations: Translations = await response.json();
 
       Object.entries(translations).forEach(([original, translated]) => {
-        // Encontra todos os elementos que contêm o texto original e atualiza para o texto traduzido
-        document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, a, label').forEach(element => {
-          if (element.textContent === original) {
-            element.textContent = translated;
-          }
-        });
+        const escapedOriginal = original.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedOriginal, "g");
+        document.body.innerHTML = document.body.innerHTML.replace(regex, translated);
       });
 
     } catch (error) {

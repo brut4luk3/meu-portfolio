@@ -7,10 +7,7 @@ import translationPT from './locales/pt/translation.json';
 const resources = {
   en: {
     translation: translationEN,
-  },
-  pt: {
-    translation: translationPT,
-  },
+  }
 } as const;
 
 i18n

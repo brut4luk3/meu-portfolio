@@ -1,22 +1,22 @@
 body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 .content,
 .App {
-  padding: auto;
-  margin: 0 auto;
-  max-width: 1200px;
+    padding: auto;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 /* Estilos gerais */
 body,
 html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-  background-image: linear-gradient(to top right, #F2F2F2 50%, #27538C 50%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-image: linear-gradient(to top right, #F2F2F2 50%, #27538C 50%);
 }

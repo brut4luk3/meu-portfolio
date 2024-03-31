@@ -12,7 +12,6 @@ import LanguageSelector from './components/anims/LanguageSelector';
 function App() {
   return (
     <div className="App">
-      <LanguageSelector />
       <Header />
       <div className="content">
         <MainContainer />

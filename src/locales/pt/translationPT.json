@@ -1,0 +1,16 @@
+{
+    "greeting": "Me chamo <0>Lucas G. Reinert</0> e sou o <1>Desenvolvedor Full-Stack</1> de que você precisa!",
+    "experience": "Com mais de <0>4 anos de experiência</0> em desenvolvimento de sites, aplicativos e aplicações desktop, posso criar projetos funcionais, escaláveis e de fácil manutenção.",
+    "passion": "Amo meu trabalho e minha maior inspiração é ajudar você a <0>alcançar seus objetivos!</0>",
+    "testProducts": "Teste alguns dos meus produtos:",
+    "dateDifference": "A diferença é de {count} dia(s).",
+    "dateEqual": "A Data1 é igual a Data2.",
+    "date1LessThanDate2": "A Data1 é menor que a Data2.",
+    "date1GreaterThanDate2": "A Data1 é maior que a Data2.",
+    "unknownResult": "Resultado desconhecido.",
+    "notSpecifiedMode": "Modo não especificado.",
+    "errorRequest": "Erro ao realizar a requisição: ",
+    "submit": "Enviar",
+    "difference": "Diferença",
+    "comparison": "Comparação"
+}

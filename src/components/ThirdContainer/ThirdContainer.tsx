@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './ThirdContainer.css';
 import TestingMenu from './testingMenu/TestingMenu';
 
 const ThirdContainer = () => {
+  const { t } = useTranslation();
   const [hasAnimated, setHasAnimated] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +32,7 @@ const ThirdContainer = () => {
       ref={containerRef}
     >
       <div className='header5Image'></div>
-      <h1>Teste alguns dos meus produtos:</h1>
+      <h1>{t('testProducts')}</h1>
       <TestingMenu />
     </div>
   );

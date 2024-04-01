@@ -1,0 +1,16 @@
+{
+    "greeting": "My name is <0>Lucas G. Reinert</0> and I am the <1>Full-Stack Developer</1> you need!",
+    "experience": "With more than <0>4 years of experience</0> in website, apps, and desktop application development, I can create functional, scalable, and easy-to-maintain projects.",
+    "passion": "I love my job and my biggest inspiration is helping you <0>achieve your goals!</0>",
+    "testProducts": "Test some of my products:",
+    "dateDifference": "The difference is {count} day(s).",
+    "dateEqual": "Date1 is equal to Date2.",
+    "date1LessThanDate2": "Date1 is less than Date2.",
+    "date1GreaterThanDate2": "Date1 is greater than Date2.",
+    "unknownResult": "Unknown result.",
+    "notSpecifiedMode": "Mode not specified.",
+    "errorRequest": "Error performing the request: ",
+    "submit": "Submit",
+    "difference": "Difference",
+    "comparison": "Comparison"
+}

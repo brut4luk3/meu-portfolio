@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import TestingMenuAnim from './TestingMenuAnim';
 import brIcon from '../../assets/br.png';
@@ -7,17 +7,23 @@ import './LanguageSelector.css';
 
 const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();
-  const isLoading = i18n.isInitialized && i18n.language !== 'en';
+  const [isChangingLanguage, setIsChangingLanguage] = useState(false);
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+    setIsChangingLanguage(true);
+
+    setTimeout(() => {
+      i18n.changeLanguage(lng).then(() => {
+        setIsChangingLanguage(false);
+      });
+    }, 2000);
   };
 
   return (
     <div className='LanguageSelector'>
-      {isLoading && <TestingMenuAnim />}
+      {isChangingLanguage && <TestingMenuAnim />}
       <img src={usIcon} alt="Translate to English" onClick={() => changeLanguage('en')} />
-      <img src={brIcon} alt="Translate to Portuguese" onClick={() => window.location.reload()} />
+      <img src={brIcon} alt="Translate to Portuguese" onClick={() => changeLanguage('pt')} />
     </div>
   );
 };

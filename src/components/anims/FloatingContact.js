@@ -37,13 +37,13 @@ const FloatingContact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-    
+
         const payload = {
             nome,
             email,
             telefone
         };
-    
+
         try {
             const response = await fetch('https://multiroleapi-production.up.railway.app/api/send_email', {
                 method: 'POST',
@@ -52,9 +52,9 @@ const FloatingContact = () => {
                 },
                 body: JSON.stringify(payload),
             });
-    
+
             if (!response.ok) throw new Error('Falha ao enviar as informações.');
-    
+
             alert('Informações enviadas com sucesso!');
         } catch (error) {
             console.error("Erro ao enviar as informações: ", error);
@@ -71,8 +71,8 @@ const FloatingContact = () => {
     return (
         <>
             <Draggable>
-            <div className="floating-contact">
-                    <img src={contactIcon} alt="Contact" onClick={() => handleContactClick()} onTouchEnd={() =>handleContactClick()} />
+                <div className="floating-contact">
+                    <img src={contactIcon} alt="Contact" onClick={() => handleContactClick()} onTouchEnd={() => handleContactClick()} />
                     <div className='tooltip-contact'>
                         <span><h4>Você pode me mover!</h4></span>
                     </div>

@@ -3,7 +3,10 @@
     "experience": "Com mais de <0>4 anos de experiência</0> em desenvolvimento de sites, aplicativos e aplicações desktop, posso criar projetos funcionais, escaláveis e de fácil manutenção.",
     "passion": "Amo meu trabalho e minha maior inspiração é ajudar você a <0>alcançar seus objetivos!</0>",
     "testProducts": "Teste alguns dos meus produtos:",
-    "dateDifference": "A diferença é de {count} dia(s).",
+    "dateDifference1": "A diferença é de ",
+    "dateDifference2": " dia(s).",
+    "difference": "Diferença",
+    "comparison": "Comparação",
     "dateEqual": "A Data1 é igual a Data2.",
     "date1LessThanDate2": "A Data1 é menor que a Data2.",
     "date1GreaterThanDate2": "A Data1 é maior que a Data2.",
@@ -11,6 +14,10 @@
     "notSpecifiedMode": "Modo não especificado.",
     "errorRequest": "Erro ao realizar a requisição: ",
     "submit": "Enviar",
-    "difference": "Diferença",
-    "comparison": "Comparação"
+    "dateComparison": "Comparação de Datas",
+    "textReplacement": "Substituição de Texto",
+    "businessDayCheck": "Verificação de Dias Úteis",
+    "phoneValidation": "Validação de Telefone",
+    "geolocation": "Geolocalização",
+    "documentValidation": "Validação de Documento"
 }

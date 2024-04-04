@@ -3,7 +3,10 @@
     "experience": "With more than <0>4 years of experience</0> in website, apps, and desktop application development, I can create functional, scalable, and easy-to-maintain projects.",
     "passion": "I love my job and my biggest inspiration is helping you <0>achieve your goals!</0>",
     "testProducts": "Test some of my products:",
-    "dateDifference": "The difference is {count} day(s).",
+    "dateDifference1": "The difference is ",
+    "dateDifference2": " day(s).",
+    "difference": "Difference",
+    "comparison": "Comparison",
     "dateEqual": "Date1 is equal to Date2.",
     "date1LessThanDate2": "Date1 is less than Date2.",
     "date1GreaterThanDate2": "Date1 is greater than Date2.",
@@ -11,6 +14,10 @@
     "notSpecifiedMode": "Mode not specified.",
     "errorRequest": "Error performing the request: ",
     "submit": "Submit",
-    "difference": "Difference",
-    "comparison": "Comparison"
+    "dateComparison": "Date Comparison",
+    "textReplacement": "Replace Text",
+    "businessDayCheck": "Business Day Check",
+    "phoneValidation": "Phone Validation",
+    "geolocation": "Geolocation",
+    "documentValidation": "Document Validation"
 }

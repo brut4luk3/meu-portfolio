@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './GeneralFormStyle.css';
 import TestingMenuAnim from '../../anims/TestingMenuAnim';
+import { useTranslation } from 'react-i18next';
 
 const ComparacaoDatasForm = () => {
+    const { t } = useTranslation();
     const [data1, setData1] = useState('');
     const [data2, setData2] = useState('');
     const [modo, setModo] = useState('diferenca');
@@ -10,31 +12,31 @@ const ComparacaoDatasForm = () => {
     const [resultado, setResultado] = useState('');
 
     interface RespostaApiDiferenca {
-        result: number; // Resultado sempre será um número para modo "diferenca"
+        result: number;
     }
 
     interface RespostaApiComparacao {
-        result: string; // Resultado pode ser "0", "-1", ou "1" para modo "comparacao"
+        result: string;
     }
 
     const interpretarResultado = (respostaApi: RespostaApiDiferenca | RespostaApiComparacao, modo: string): string => {
         if (modo === 'diferenca') {
 
-            return `A diferença é de ${respostaApi.result} dia(s).`;
+            return t('dateDifference1') + `${respostaApi.result}` + t('dateDifference2')
         } else if (modo === 'comparacao') {
 
             switch (respostaApi.result) {
                 case "0":
-                    return "A Data1 é igual a Data2.";
+                    return t('dateEqual');
                 case "-1":
-                    return "A Data1 é menor que a Data2.";
+                    return t('date1LessThanDate2');
                 case "1":
-                    return "A Data1 é maior que a Data2.";
+                    return t('date1GreaterThanDate2');
                 default:
-                    return "Resultado desconhecido.";
+                    return t('unknownResult');
             }
         }
-        return "Modo não especificado.";
+        return t('notSpecifiedMode');
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -59,20 +61,16 @@ const ComparacaoDatasForm = () => {
                 }),
             });
 
-            console.log(response);
-
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
             const respostaApi = await response.json();
-            console.log(respostaApi);
-
             const mensagemResultado = interpretarResultado(respostaApi, modo);
             setResultado(mensagemResultado);
         } catch (error) {
             console.error("Erro na requisição:", error);
-            setResultado('Erro ao realizar a requisição: ' + error);
+            setResultado(t('errorRequest') + error);
         } finally {
             setLoading(false);
         }
@@ -101,11 +99,11 @@ const ComparacaoDatasForm = () => {
                     onChange={(e) => setModo(e.target.value)}
                     className="input-data input-data-bottom"
                 >
-                    <option value="diferenca">Diferença</option>
-                    <option value="comparacao">Comparação</option>
+                    <option value="diferenca">{t('difference')}</option>
+                    <option value="comparacao">{t('comparison')}</option>
                 </select>
                 <br></br>
-                <button type="submit" className="submit-btn">Enviar</button>
+                <button type="submit" className="submit-btn">{t('submit')}</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}
         </div>

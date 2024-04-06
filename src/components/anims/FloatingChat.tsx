@@ -1,20 +1,23 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import chatIcon from '../../assets/3d.png';
 import './FloatingChat.css';
 
 const FloatingChat = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="floating-chat">
-      <img src={chatIcon} alt="Quer saber mais sobre mim?" />
+      <img src={chatIcon} alt={t('chatTooltip')} />
       <div className="tooltip">
-        <h3>Minha maior paixão:</h3>
-        <p>Minha família querida ❤️</p>
-        <h3>Meu esporte favorito:</h3>
-        <p>Ciclismo 🚲</p>
-        <h3>Meu biscoito favorito:</h3>
-        <p>Piraquê recheado 🍪</p>
-        <h3>Gênero favorito:</h3>
-        <p>Ficção Científica 🎬</p>
+        <h3>{t('myPassion')}</h3>
+        <p>{t('myFamily')}</p>
+        <h3>{t('myFavoriteSport')}</h3>
+        <p>{t('cycling')}</p>
+        <h3>{t('myFavoriteCookie')}</h3>
+        <p>{t('cookie')}</p>
+        <h3>{t('favoriteGenre')}</h3>
+        <p>{t('sciFi')}</p>
       </div>
     </div>
   );

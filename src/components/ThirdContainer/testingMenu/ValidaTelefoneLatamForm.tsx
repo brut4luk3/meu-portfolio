@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import './GeneralFormStyle.css'; // Importando o CSS global para o estilo do formulário
-import TestingMenuAnim from '../../anims/TestingMenuAnim'; // Ajuste o caminho conforme necessário
+import { useTranslation } from 'react-i18next';
+import './GeneralFormStyle.css';
+import TestingMenuAnim from '../../anims/TestingMenuAnim';
 
 const ValidaTelefoneLatamForm = () => {
+    const { t } = useTranslation();
     const [telefone, setTelefone] = useState('');
     const [loading, setLoading] = useState(false);
     const [resultado, setResultado] = useState('');
@@ -27,11 +29,11 @@ const ValidaTelefoneLatamForm = () => {
             }
     
             const respostaApi = await response.json();
-            const mensagemResultado = `Região: ${respostaApi.regiao}, Válido: ${respostaApi.valid ? "Sim" : "Não"}`;
+            const mensagemResultado = `${t('region')}: ${respostaApi.regiao}, ${t('valid')}: ${respostaApi.valid ? t('yes') : t('no')}`;
             setResultado(mensagemResultado);
         } catch (error) {
-            const message = (error instanceof Error) ? error.message : 'Ocorreu um erro desconhecido';
-            setResultado('Erro ao realizar a requisição: ' + message);
+            const message = (error instanceof Error) ? error.message : t('unknownError');
+            setResultado(t('requestError') + message);
         } finally {
             setLoading(false);
         }
@@ -45,11 +47,11 @@ const ValidaTelefoneLatamForm = () => {
                     type="tel"
                     value={telefone}
                     onChange={(e) => setTelefone(e.target.value)}
-                    placeholder="Digite o telefone completo com DDD"
+                    placeholder={t('enterPhone')}
                     className="input-data lone-field"
                 />
-                <br></br>
-                <button type="submit" className="submit-btn">Enviar</button>
+                <br />
+                <button type="submit" className="submit-btn">{t('submit')}</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}
         </div>

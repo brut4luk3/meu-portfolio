@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './GeneralFormStyle.css';
 import TestingMenuAnim from '../../anims/TestingMenuAnim';
+import { useTranslation } from 'react-i18next';
 
 const GeolocalizacaoForm = () => {
+    const { t } = useTranslation();
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('');
     const [loading, setLoading] = useState(false);
@@ -29,7 +31,10 @@ const GeolocalizacaoForm = () => {
             }
 
             const respostaApi = await response.json();
-            const mensagemResultado = `Cidade: ${respostaApi.cidade || "Não disponível"}, Estado: ${respostaApi.estado}, País: ${respostaApi.pais}`;
+            const cidade = respostaApi.cidade || t('notAvailable', { defaultValue: 'Não disponível' });
+            const estado = respostaApi.estado || t('notAvailable', { defaultValue: 'Não disponível' });
+            const pais = respostaApi.pais || t('notAvailable', { defaultValue: 'Não disponível' });
+            const mensagemResultado = t('locationResult', { city: cidade, state: estado, country: pais });
             setResultado(mensagemResultado);
         } catch (error) {
             const message = (error instanceof Error) ? error.message : 'Ocorreu um erro desconhecido';
@@ -58,7 +63,7 @@ const GeolocalizacaoForm = () => {
                     className="input-data input-data-bottom"
                 />
                 <br />
-                <button type="submit" className="submit-btn">Enviar</button>
+                <button type="submit" className="submit-btn">{t('submit')}</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}
         </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './GeneralFormStyle.css';
 import TestingMenuAnim from '../../anims/TestingMenuAnim';
 
@@ -9,6 +10,7 @@ const estados = [
 ];
 
 const InformaDiaUtilForm = () => {
+    const { t } = useTranslation();
     const [dataAtual, setDataAtual] = useState('');
     const [estado, setEstado] = useState('all');
     const [loading, setLoading] = useState(false);
@@ -25,7 +27,7 @@ const InformaDiaUtilForm = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    data_atual: dataAtual.split('-').reverse().join('/'), // Converte YYYY-MM-DD para DD/MM/YYYY
+                    data_atual: dataAtual.split('-').reverse().join('/'),
                     estado: estado === "Todos" ? "all" : estado,
                 }),
             });
@@ -37,8 +39,8 @@ const InformaDiaUtilForm = () => {
             const respostaApi = await response.json();
             setResultado(respostaApi.result);
         } catch (error) {
-            const message = (error instanceof Error) ? error.message : 'Ocorreu um erro desconhecido';
-            setResultado('Erro ao realizar a requisição: ' + message);
+            const message = (error instanceof Error) ? error.message : t('unknownError');
+            setResultado(t('requestError') + message);
         } finally {
             setLoading(false);
         }
@@ -59,12 +61,13 @@ const InformaDiaUtilForm = () => {
                     onChange={(e) => setEstado(e.target.value === "Todos" ? "all" : e.target.value)}
                     className="input-data input-data-bottom"
                 >
-                    {estados.map((estado, index) => (
-                        <option key={index} value={estado === "Todos" ? "all" : estado}>{estado}</option>
+                    <option value="all">{t('chooseState')}</option>
+                    {estados.slice(1).map((estado, index) => (
+                        <option key={index} value={estado}>{estado}</option>
                     ))}
                 </select>
                 <br></br>
-                <button type="submit" className="submit-btn">Enviar</button>
+                <button type="submit" className="submit-btn">{t('submit')}</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}
         </div>

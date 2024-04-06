@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './GeneralFormStyle.css';
 import TestingMenuAnim from '../../anims/TestingMenuAnim';
+import { useTranslation } from 'react-i18next';
 
 const ReplaceTextForm = () => {
+    const { t } = useTranslation();
     const [texto, setTexto] = useState('');
     const [itemParaSubstituir, setItemParaSubstituir] = useState('');
     const [itemSubstituto, setItemSubstituto] = useState('');
@@ -37,8 +39,8 @@ const ReplaceTextForm = () => {
             const respostaApi = await response.json();
             setResultado(respostaApi.result);
         } catch (error) {
-            const message = (error instanceof Error) ? error.message : 'Ocorreu um erro desconhecido';
-            setResultado('Erro ao realizar a requisição: ' + message);
+            const message = (error instanceof Error) ? error.message : t('unknownError');
+            setResultado(t('requestError') + message);
         } finally {
             setLoading(false);
         }
@@ -48,32 +50,32 @@ const ReplaceTextForm = () => {
         <div className="form-container">
             {loading && <TestingMenuAnim />}
             <form onSubmit={handleSubmit}>
-                <input
+            <input
                     type="text"
                     value={texto}
                     onChange={(e) => setTexto(e.target.value)}
-                    placeholder="Texto"
+                    placeholder={t('text')}
                     className="input-data input-data-top"
                 />
                 <input
                     type="text"
                     value={itemParaSubstituir}
                     onChange={(e) => setItemParaSubstituir(e.target.value)}
-                    placeholder="Item para substituir"
+                    placeholder={t('itemToReplace')}
                     className="input-data"
                 />
                 <input
                     type="text"
                     value={itemSubstituto}
                     onChange={(e) => setItemSubstituto(e.target.value)}
-                    placeholder="Item substituto"
+                    placeholder={t('replacementItem')}
                     className="input-data"
                 />
                 <input
                     type="number"
                     value={casoParcialQuantidade}
                     onChange={(e) => setCasoParcialQuantidade(e.target.value)}
-                    placeholder="Caso Parcial Quantidade"
+                    placeholder={t('partialCaseQuantity')}
                     className="input-data"
                 />
                 <select
@@ -81,11 +83,11 @@ const ReplaceTextForm = () => {
                     onChange={(e) => setModo(e.target.value)}
                     className="input-data input-data-bottom"
                 >
-                    <option value="parcial">Parcial</option>
-                    <option value="completo">Completo</option>
+                    <option value="parcial">{t('partial')}</option>
+                    <option value="completo">{t('complete')}</option>
                 </select>
                 <br></br>
-                <button type="submit" className="submit-btn">Enviar</button>
+                <button type="submit" className="submit-btn">{t('submit')}</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}
         </div>

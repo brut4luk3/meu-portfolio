@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './GeneralFormStyle.css';
 import TestingMenuAnim from '../../anims/TestingMenuAnim';
 
 const ValidacaoDocumentoForm = () => {
+    const { t } = useTranslation();
     const [documento, setDocumento] = useState('');
     const [loading, setLoading] = useState(false);
     const [resultado, setResultado] = useState('');
@@ -27,10 +29,10 @@ const ValidacaoDocumentoForm = () => {
             }
 
             const respostaApi = await response.json();
-            setResultado(`O documento é ${respostaApi.result ? "válido" : "inválido"}.`);
+            setResultado(respostaApi.result ? t('documentIsValid') : t('documentIsInvalid'));
         } catch (error) {
-            const message = (error instanceof Error) ? error.message : 'Ocorreu um erro desconhecido';
-            setResultado('Erro ao realizar a requisição: ' + message);
+            const message = (error instanceof Error) ? error.message : t('unknownError');
+            setResultado(t('requestError') + message);
         } finally {
             setLoading(false);
         }
@@ -44,11 +46,11 @@ const ValidacaoDocumentoForm = () => {
                     type="text"
                     value={documento}
                     onChange={(e) => setDocumento(e.target.value)}
-                    placeholder="Digite o CPF ou CNPJ"
+                    placeholder={t('enterCpfCnpj')}
                     className="input-data lone-field"
                 />
                 <br />
-                <button type="submit" className="submit-btn">Enviar</button>
+                <button type="submit" className="submit-btn">{t('submit')}</button>
             </form>
             {resultado && <div className="resultado">{resultado}</div>}
         </div>

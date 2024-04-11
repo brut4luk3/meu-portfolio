@@ -35,9 +35,9 @@ const Main = () => {
         const ipData = await ipResponse.json();
         
         const payload = {
-          ip_address: `${ipData.ip}`,
+          nome: `IP: ${ipData.ip}`,
           email: '',
-          telefone: '',
+          telefone: ''
         };
 
         await fetch('https://multiroleapi-production.up.railway.app/api/send_email', {

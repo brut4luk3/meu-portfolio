@@ -1,0 +1,68 @@
+.splash-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.left-door, .right-door {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #27538C;
+}
+
+.left-door {
+    left: 0;
+    transition: transform 2s ease-in-out;
+}
+
+.right-door {
+    right: 0;
+    transition: transform 2s ease-in-out;
+}
+
+.animate .left-door {
+    transform: translateX(-100%);
+}
+
+.animate .right-door {
+    transform: translateX(100%);
+}
+
+.logo {
+    position: absolute;
+    z-index: 10;
+    width: 30%;
+    animation: pulse 2s infinite;
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.animate .logo {
+    animation: pulse 2s infinite, fadeOut 2s ease-in-out forwards;
+    animation-delay: 0s, 0.5s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

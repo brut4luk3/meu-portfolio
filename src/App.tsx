@@ -12,7 +12,7 @@ function App() {
   const { i18n } = useTranslation();
 
   return (
-    <div className="App" key={i18n.language}>
+    <div className={`App app-fade-in`} key={i18n.language}>
       <Header />
       <div className="content">
         <LanguageSelector />

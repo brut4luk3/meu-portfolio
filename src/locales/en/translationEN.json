@@ -65,5 +65,8 @@
     "myFavoriteCookie": "My favorite cookie:",
     "cookie": "Piraquê stuffed 🍪",
     "favoriteGenre": "Favorite genre:",
-    "sciFi": "Science Fiction 🎬"
+    "sciFi": "Science Fiction 🎬",
+    "testWebsites": "Take a look at the websites I've built:",
+    "copybaseBi": "This website generates MRR, Churn Rate and Trial Cancelling Rate from a subscriber's spreadsheet.",
+    "jsonGenerator": "This website reads and writes JSON Files."
 }

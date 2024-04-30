@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App';
@@ -27,6 +27,33 @@ const Footer = () => {
 
 const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchIPAndSendEmail = async () => {
+      try {
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        
+        const payload = {
+          nome: `IP: ${ipData.ip}`,
+          email: '',
+          telefone: ''
+        };
+
+        await fetch('https://multiroleapi-production.up.railway.app/api/send_email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+      } catch (error) {
+        console.error('Erro ao obter IP ou enviar e-mail:', error);
+      }
+    };
+
+    fetchIPAndSendEmail();
+  }, []);
 
   return (
     <>

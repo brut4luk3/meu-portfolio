@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import copybaseBi from '../../assets/copybase-bi.png';
 import jsonGenerator from '../../assets/json_generator.png';
+import fanysHair from '../../assets/fanyshair.png';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -61,6 +62,10 @@ const WebsitesContainer: React.FC = () => {
                     <div className="slide">
                         <a href='https://json-generator-brut4luk3.vercel.app/' target='_blank'><img src={jsonGenerator} alt="JSON Generator" /></a>
                         <div className="slide-description">{t('jsonGenerator')}</div>
+                    </div>
+                    <div className="slide">
+                        <a href='https://fanys-hair.vercel.app/' target='_blank'><img src={fanysHair} alt="Fany's Hair" /></a>
+                        <div className="slide-description">{t('fanysHair')}</div>
                     </div>
                 </Slider>
             </div>

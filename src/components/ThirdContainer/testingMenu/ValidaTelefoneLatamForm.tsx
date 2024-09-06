@@ -14,7 +14,7 @@ const ValidaTelefoneLatamForm = () => {
         setLoading(true);
     
         try {
-            const response = await fetch('https://multiroleapi-production.up.railway.app/api/valida_telefone_latam', {
+            const response = await fetch('https://multirole-api.vercel.app/api/valida_telefone_latam', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -18,7 +18,7 @@ const ReplaceTextForm = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://multiroleapi-production.up.railway.app/api/replace_text', {
+            const response = await fetch('https://multirole-api.vercel.app/api/replace_text', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

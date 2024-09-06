@@ -14,7 +14,7 @@ const ValidacaoDocumentoForm = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://multiroleapi-production.up.railway.app/api/valida_cpf_cnpj', {
+            const response = await fetch('https://multirole-api.vercel.app/api/valida_cpf_cnpj', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

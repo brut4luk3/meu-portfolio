@@ -49,7 +49,7 @@ const ComparacaoDatasForm = () => {
         };
 
         try {
-            const response = await fetch('https://multiroleapi-production.up.railway.app/api/compara_datas', {
+            const response = await fetch('https://multirole-api.vercel.app/api/compara_datas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

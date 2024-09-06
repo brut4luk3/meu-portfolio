@@ -15,7 +15,7 @@ const GeolocalizacaoForm = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://multiroleapi-production.up.railway.app/api/geolocation', {
+            const response = await fetch('https://multirole-api.vercel.app/api/geolocation', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
